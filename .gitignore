@@ -1,11 +1,14 @@
 # If you prefer the allow list template instead of the deny list, see community template:
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
-# Binaries for programs and plugins
+# Ignore programs, compiled object files and libraries
 *.exe
 *.exe~
-*.dll
+*.o
+*.lo
+*.la
 *.so
+*.dll
 *.dylib
 
 # Test binary, built with `go test -c`
@@ -17,8 +20,40 @@ coverage.*
 *.coverprofile
 profile.cov
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Ignore build directories
+build/
+dist/
+target/
+
+# Ignore editor and IDE specific files
+.idea/
+.vscode/
+*.swp
+*.bak
+*~
+
+# Ignore package manager directories
+node_modules/
+vendor/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+temp/
+
+# Ignore sensitive information (e.g., API keys, environment variables)
+.env
+config.local.js
+secrets.json
+
+# Ignore user-specific files that shouldn't be shared
+.DS_Store # macOS specific
+Thumbs.db # Windows specific
+
+# Negate a previously ignored pattern (e.g., ignore all .log files except important.log)
+!important.log
 
 # Go workspace file
 go.work
@@ -26,7 +61,3 @@ go.work.sum
 
 # env file
 .env
-
-# Editor/IDE
-# .idea/
-# .vscode/

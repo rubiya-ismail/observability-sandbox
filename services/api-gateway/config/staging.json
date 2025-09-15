@@ -1,0 +1,34 @@
+{
+  "environment": "prod",
+  "services": {
+    "users": {
+      "name": "user-service",
+      "base_url": "https://user-api-staging.company.com",
+      "api_version": "v1",
+      "timeout": "30s",
+      "retries": 2,
+      "service_endpoint": "/api/v1/users",
+      "health_endpoint": "/api/v1/health",
+      "metrics_endpoint": "/api/v1/metrics"
+    },
+    "orders": {
+      "name": "order-service", 
+      "base_url": "https://order-api-staging.company.com",
+      "api_version": "v1",
+      "timeout": "30s",
+      "retries": 2,
+      "service_endpoint": "/api/v1/orders",
+      "health_endpoint": "/api/v1/health",
+      "metrics_endpoint": "/api/v1/metrics"
+    }
+  },
+  "rate_limits": {
+    "requests_per_minute": 1000,
+    "window_size": "1m"
+  },
+  "gateway": {
+    "port": 8080,
+    "read_timeout": "30s",
+    "write_timeout": "30s"
+  }
+}
