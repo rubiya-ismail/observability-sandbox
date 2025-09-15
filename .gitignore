@@ -58,6 +58,4 @@ Thumbs.db # Windows specific
 # Go workspace file
 go.work
 go.work.sum
-
-# env file
-.env
+.gitignore
